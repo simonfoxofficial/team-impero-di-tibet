@@ -1,0 +1,15 @@
+scoreboard players set #rm ordine 1
+scoreboard players set #rp ordine 1
+scoreboard players set #rb ordine 1
+execute if score #team2 contatori > #team1 contatori run scoreboard players add #rm ordine 1
+execute if score #team3 contatori > #team1 contatori run scoreboard players add #rm ordine 1
+execute if score #team1 contatori >= #team2 contatori run scoreboard players add #rp ordine 1
+execute if score #team3 contatori > #team2 contatori run scoreboard players add #rp ordine 1
+execute if score #team1 contatori >= #team3 contatori run scoreboard players add #rb ordine 1
+execute if score #team2 contatori >= #team3 contatori run scoreboard players add #rb ordine 1
+execute if score #rm ordine matches 1 if score #rp ordine matches 2 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}},"\n",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}},"\n",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}}]
+execute if score #rm ordine matches 1 if score #rp ordine matches 3 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}},"\n",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}},"\n",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}}]
+execute if score #rm ordine matches 2 if score #rp ordine matches 1 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}},"\n",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}},"\n",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}}]
+execute if score #rm ordine matches 3 if score #rp ordine matches 1 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}},"\n",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}},"\n",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}}]
+execute if score #rm ordine matches 2 if score #rp ordine matches 3 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}},"\n",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}},"\n",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}}]
+execute if score #rm ordine matches 3 if score #rp ordine matches 2 run data modify entity @e[type=text_display,tag=classifica,limit=1] text set value ["",{text:"team3: ",color:"gray"},{score:{name:"#team3",objective:"contatori"}},"\n",{text:"team2: ",color:"aqua"},{score:{name:"#team2",objective:"contatori"}},"\n",{text:"team1: ",color:"light_purple"},{score:{name:"#team1",objective:"contatori"}}]
