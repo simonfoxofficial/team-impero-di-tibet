@@ -79,4 +79,7 @@ titolo-volante/
 - **Il numero non cambia:** verifica che lo scoreboard esista con `/scoreboard objectives list`. Se manca, fai `/reload`.
 - **Le righe non si riordinano:** usa le function `team1`, `team2` e `team3` e non modificare lo scoreboard a mano, altrimenti l'ordine si aggiorna solo al punto successivo.
 - **Più testi sovrapposti:** usa sempre `spawn`, che cancella quello vecchio prima di crearne uno nuovo.
- 
+
+## Licenza
+
+Progetto distribuito con licenza [MIT](LICENSE).
